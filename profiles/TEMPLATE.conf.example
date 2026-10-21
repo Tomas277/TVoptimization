@@ -1,0 +1,12 @@
+# TEMPLATE for a new vendor profile.
+#
+# 1. Copy to profiles/<manufacturer>.conf, where <manufacturer> is the output of
+#      adb shell getprop ro.product.manufacturer
+#    lower-cased with non-alphanumerics removed (e.g. "TCL" -> tcl).
+# 2. List package PREFIXES that must never be removed on this vendor's TVs:
+#    the tuner, HDMI/input framework, vendor launcher/settings, remote service.
+# 3. Say whether you verified it, and on which model / Android version.
+#
+# STATUS: verified on <model>, Android <version>   (or: UNVERIFIED)
+
+protect com.example.vendor.tv.     # what it is

@@ -1,0 +1,8 @@
+# Generated output contains your device fingerprint and the list of apps you
+# have installed. Never commit these.
+reports/
+backup/
+
+# Your personal debloat list (the example template IS tracked).
+packages.txt
+background.txt

@@ -1,0 +1,23 @@
+# packages.example.txt - template for packages.txt
+#
+# One package name per line. Text after '#' is a comment.
+# Copy to packages.txt and keep ONLY what you are sure you do not need.
+# Find real names in reports/<timestamp>/packages_system.txt after 00_detect.sh.
+# Do these in small batches and reboot/test between them.
+#
+# The names below are COMMON EXAMPLES, not a verified list for any model.
+# Packages that do not exist on your TV are skipped automatically, and
+# packages matching your vendor profile in profiles/ are always protected.
+
+# --- Google TV / Android TV extras (only if you do not use them) ---
+# com.google.android.videos        # Google TV / Play Movies
+# com.google.android.music         # Play Music (legacy)
+# com.google.android.play.games    # Play Games
+# com.google.android.feedback      # feedback reporting (telemetry)
+
+# --- Vendor extras: find promo/ad/"hub" apps in YOUR report ---
+# com.<vendor>.<promo-or-ad-app>
+
+# --- Preloaded streaming apps you do not use ---
+# com.netflix.ninja
+# com.amazon.amazonvideo.livingroom

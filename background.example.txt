@@ -1,0 +1,15 @@
+# background.example.txt - template for background.txt (used by 05_background.sh)
+#
+# One package name per line. Text after '#' is a comment.
+# Copy to background.txt and list apps that should NOT run in the background.
+# Find the heaviest ones with:
+#   adb shell ps -A -o RSS,NAME | sort -rn | head -25
+#
+# Do not list apps that must keep running: music players, the launcher you use,
+# casting receivers, anything that has to play audio while you switch apps.
+#
+# Common streaming apps (verify the names on your own TV):
+# com.netflix.ninja
+# com.disney.disneyplus
+# com.amazon.amazonvideo.livingroom
+# com.google.android.youtube.tv
