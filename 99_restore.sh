@@ -10,7 +10,8 @@
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 require_tv
 
-dir="${1:-$(ls -d "$ROOT"/backup/*/ 2>/dev/null | sort | tail -1)}"
+backups=("$ROOT"/backup/*/)   # glob sorts by name = by timestamp; last is newest
+dir="${1:-${backups[-1]}}"
 [[ -d "$dir" ]] || die "no backup found. Nothing to restore from."
 echo "Restoring from $dir"
 
