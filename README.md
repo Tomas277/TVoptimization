@@ -5,8 +5,9 @@ telemetry-heavy, driven from a Linux machine over ADB (Android Debug Bridge).
 
 Built with a Panasonic TV in mind, but it uses only standard Android tools, so
 it should work on most Android TV / Google TV sets (Sony, Philips, TCL, Hisense,
-Xiaomi, Nvidia Shield, ...). **It is untested on real hardware so far**; see
-[COMPATIBILITY.md](COMPATIBILITY.md) and please add your results.
+Xiaomi, Nvidia Shield, ...). **It has been run on one TV so far** (a Panasonic
+4KTV-JUP, Android 11; see the [case study](docs/PANASONIC-4KTV-JUP.md)). Other
+brands are unverified; see [COMPATIBILITY.md](COMPATIBILITY.md) and please add your results.
 
 **What it does:** removes unwanted preinstalled apps, tunes a few settings,
 clears caches. **What it never does:** root the TV, flash firmware, or touch
