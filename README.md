@@ -114,6 +114,9 @@ Ethernet or 5 GHz Wi-Fi, and keep the TV on a fixed IP.
 - Private DNS: `adb shell settings get global private_dns_mode` should print `hostname`.
 - Connectivity: `adb shell ping -c 5 8.8.8.8`.
 - Check that live TV, HDMI inputs and your streaming apps still work after each batch.
+- **Also test a long idle period** (15+ minutes of music or video with no remote input).
+  Removing the screensaver looked fine in short tests, but the TV then went to sleep
+  during long audio playback (see the case study).
 
 ## Undoing changes
 

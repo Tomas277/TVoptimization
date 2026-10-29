@@ -26,10 +26,11 @@ for your own TV, but check your own `00_detect.sh` report before copying anythin
 ## What was done
 
 1. `00_detect.sh` + `01_backup.sh` (read-only).
-2. Removed four unused system apps with `02_debloat.sh`:
-   `com.panasonic.demomode`, `com.google.android.backdrop`,
-   `com.google.android.partnersetup`, `com.google.android.onetimeinitializer`.
-   No problems after a restart: live TV, HDMI inputs and apps all worked.
+2. Removed four apps with `02_debloat.sh`: `com.panasonic.demomode`,
+   `com.google.android.backdrop`, `com.google.android.partnersetup`,
+   `com.google.android.onetimeinitializer`. Live TV, HDMI inputs and apps all
+   worked after a restart, but **removing `backdrop` (the screensaver) was a
+   mistake**: see "Things that didn't go as expected". It was restored later.
 3. `03_tweaks.sh`: animation scales 0.5, ad-tracking limit, Private DNS
    (AdGuard), background Wi-Fi/Bluetooth scanning off. Frees about 350 MB of
    cache via `04_cleanup.sh`.
@@ -54,6 +55,15 @@ Measured 2 minutes after a reboot. Before = first restart, after the first batch
 A modest gain. A 1.7 GB TV stays tight; software tweaks only go so far.
 
 ## Things that didn't go as expected
+
+- **Removing the screensaver made the TV shut down during audio.** After
+  `com.google.android.backdrop` was removed, the TV went to sleep about 10
+  minutes into music playback with no remote input. The idle timeout was 5
+  minutes (`screen_off_timeout=300000`), audio doesn't count as activity, and
+  `screensaver_components` still pointed at the removed package. Restoring it
+  (`cmd package install-existing --user 0 com.google.android.backdrop`) fixed
+  it. Not caught in testing because the first checks were short. **Don't remove
+  the screensaver, and test with a long idle period (15+ minutes of audio).**
 
 - **`am start -a android.settings.PRIVACY_SETTINGS` opened the factory reset
   page** (`com.android.tv.settings/.device.storage.ResetActivity`). Nothing was
